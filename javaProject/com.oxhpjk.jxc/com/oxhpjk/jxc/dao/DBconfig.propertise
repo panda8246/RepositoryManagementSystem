@@ -1,0 +1,8 @@
+Database-type=mysql
+DBhost=localhost
+DBport=3306
+DBname=jxc?useSSL=false&serverTimezone=GMT&allowPublicKeyRetrieval=true
+DBuser=root
+DBpassword=123
+
+DBdriver=com.mysql.cj.jdbc.Driver
