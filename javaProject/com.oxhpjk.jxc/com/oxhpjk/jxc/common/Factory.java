@@ -5,6 +5,7 @@ package com.oxhpjk.jxc.common;
  *
  */
 
+import com.oxhpjk.jxc.service.ClientService;
 import com.oxhpjk.jxc.service.UserServive;
 
 public class Factory {
@@ -28,6 +29,21 @@ public class Factory {
 	public static UserServive getUserServive() {
 		try {
 			return (UserServive) Class.forName(Constants.USER_SERVICE_CLASS).newInstance();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	
+	/**
+	 *  È¡µÃClientServiceÊµÀý
+	 * @return
+	 */
+	public static ClientService getClientService() {
+		try {
+			return (ClientService)Class.forName(Constants.CLIENT_SERVICE_CLASS).newInstance();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

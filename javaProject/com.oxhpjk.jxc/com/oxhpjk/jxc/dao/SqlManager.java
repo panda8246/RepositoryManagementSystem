@@ -163,7 +163,7 @@ public class SqlManager {
 	private void setPrepareStatementParams(String sql,Object[] parms) {
 		try {
 			pstm = con.prepareStatement(sql);
-			if(parms.length > 0) {
+			if(parms != null && parms.length > 0) {
 				for(int i = 0;i<parms.length;i++) {
 					pstm.setObject(i+1, parms[i]);		//pstm中参数从1开始
 				}

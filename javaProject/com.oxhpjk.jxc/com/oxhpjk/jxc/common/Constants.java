@@ -11,5 +11,5 @@ public interface Constants {
 	
 	//类的完整包名
 	String USER_SERVICE_CLASS = "com.oxhpjk.jxc.service.imp.UserImp";
-	
+	String CLIENT_SERVICE_CLASS = "com.oxhpjk.jxc.service.imp.ClientImp";
 }
