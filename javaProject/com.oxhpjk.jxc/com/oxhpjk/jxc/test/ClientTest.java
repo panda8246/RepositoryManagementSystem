@@ -17,8 +17,8 @@ public class ClientTest {
 //		Client client = (Client)list.get(0);
 //		System.out.println(client.getName());
 		String id = "C1";
-		Client client = new Client("C");
-		List list = clientService.findClients(client);
-		System.out.println(((Client)list.get(0)).getBank());
+		Client client = new Client("C2","996健身","广东广州","123456","996@996.com","996996996","知名企业家","54385438543","天地银行","996996996996",0);
+		//List list = clientService.findClients(client);
+		System.out.println(clientService.updateClient(client));
 	}
 }

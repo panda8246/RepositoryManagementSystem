@@ -23,7 +23,7 @@ public class Client {
 	
 	public Client(String id, String name, String address, String zip, String email, String phone_number, String contact,
 			String contact_phone_number, String bank, String bank_account, int remark) {
-		super();
+		//super();
 		this.id = id;
 		this.name = name;
 		this.address = address;

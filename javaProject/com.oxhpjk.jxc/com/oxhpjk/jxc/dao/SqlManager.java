@@ -158,6 +158,58 @@ public class SqlManager {
 	
 	
 	/**
+	 * 	执行数据库跟新操作
+	 * @param sql	SQL语句
+	 * @param parms		替换参数
+	 * @param type		SQL语句类型
+	 * @return	
+	 */
+	public boolean excuteUpdate(String sql,Object[] parms,int type) {
+		boolean res = false;
+		
+		switch (type) {
+		case Constants.PSTM_TYPE:
+			setPrepareStatementParams(sql, parms);
+			try {
+				pstm.executeUpdate();		//执行sql语句
+				instance.commit();
+				res = true;
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		case Constants.CALL_TYPE:
+			setCallableStatementParams(sql, parms);
+			try {
+				cstm.executeUpdate();		//执行sql语句
+				instance.commit();				
+				res = true;
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+
+		default:
+			//异常处理，没有找到对应的处理方式
+			break;
+		}
+		return res;
+	}
+	
+	
+	private void commit() {
+		try {
+			con.commit();
+			System.out.println("提交成功");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	/**
 	 * 	设置PrepareStatement对象的参数（用于替换SQL中）
 	 */
 	private void setPrepareStatementParams(String sql,Object[] parms) {

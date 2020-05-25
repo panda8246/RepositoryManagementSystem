@@ -22,14 +22,14 @@ public class ClientImp implements ClientService{
 
 	@Override
 	public boolean updateClient(Client client) {
-		// TODO Auto-generated method stub
-		return false;
+		ClientDao clientdao = new ClientDao();
+		return clientdao.updateClient(client);
 	}
 
 	@Override
 	public boolean addClient(Client client) {
-		// TODO Auto-generated method stub
-		return false;
+		ClientDao clientdao = new ClientDao();
+		return clientdao.addClient(client);
 	}
 
 
