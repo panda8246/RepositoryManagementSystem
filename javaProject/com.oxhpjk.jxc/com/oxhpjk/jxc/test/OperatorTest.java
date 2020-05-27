@@ -17,7 +17,7 @@ public class OperatorTest {
 	 * 根据用户名和密码进行查询
 	 *
 	 */
-	@Test
+	
 	public void testLoginCheck() {
 		OperatorService operatorService=CommonFactory.getOperatorService();
 		boolean result=operatorService.loginCheck(new Operator("oxh","root"));
@@ -35,8 +35,15 @@ public class OperatorTest {
 	@Test
 	public void testGetOperator() {
 		OperatorService operatorService=CommonFactory.getOperatorService();
-		Operator o=operatorService.getOperator("oxh");
+		Operator o=operatorService.getOperator("root");
 		System.out.println(o);
+	}
+	
+	
+	public void testUpdate() {
+		OperatorService operatorService=CommonFactory.getOperatorService();
+		Operator o=new Operator("root","123","jojo","0");
+		System.out.println(operatorService.update(o));
 	}
 		
 }

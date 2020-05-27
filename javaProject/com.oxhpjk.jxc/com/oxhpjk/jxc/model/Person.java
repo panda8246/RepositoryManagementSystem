@@ -4,7 +4,7 @@ import com.oxhpjk.jxc.commom.ValidationManager;
 
 /**
  * 提取供应商和客户的公共信息
- * @author FPF
+ * @author 
  *
  */
 public class Person {

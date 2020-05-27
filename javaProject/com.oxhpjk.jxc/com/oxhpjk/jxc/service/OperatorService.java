@@ -19,5 +19,7 @@ public interface OperatorService {
 	 * @return
 	 */
 	public  Operator getOperator(String username) ;
+	
+	public boolean update(Operator operator);
 }
 

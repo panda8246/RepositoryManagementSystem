@@ -76,6 +76,23 @@ public class OperatorDao {
 		}
 		return operator;
 	}
+	
+	
+	/**
+	 * 	修改密码，名字，权限
+	 * @param opreator
+	 * @return
+	 */
+	public boolean update(Operator opreator) {
+		String password = opreator.getPassword();
+		String name = opreator.getName();
+		String power = opreator.getPower();
+		String username = opreator.getUsername();
+		String sql = "update t_operator set password=?,name=?,power=? where username=?";
+		Object[] params = new Object[] {password,name,password,username};
+		SqlManager sqlManager = SqlManager.createInstance();
+		return sqlManager.executeUpdate(sql, params, Constants.PSTM_TYPE);
+	}
 
 	
 }

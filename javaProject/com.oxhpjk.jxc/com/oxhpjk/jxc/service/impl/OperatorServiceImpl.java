@@ -30,4 +30,13 @@ public  class OperatorServiceImpl implements OperatorService {
 		return  operatorDao.getOperator(username);
 	}
 	
+	/**
+	 * 	修改密码，名字，权限
+	 * @return
+	 */
+	public boolean update(Operator operator) {
+		operatorDao=new OperatorDao();
+		return  operatorDao.update(operator);
+	}
+	
 }
