@@ -7,7 +7,9 @@ package com.oxhpjk.jxc.commom;
 
 import com.oxhpjk.jxc.service.CustomerService;
 import com.oxhpjk.jxc.service.GoodsService;
+import com.oxhpjk.jxc.service.InportService;
 import com.oxhpjk.jxc.service.OperatorService;
+import com.oxhpjk.jxc.service.OutportService;
 import com.oxhpjk.jxc.service.ProviderService;
 
 public class CommonFactory {
@@ -60,6 +62,26 @@ public class CommonFactory {
 				
 			
 		}
+			return null;
+		}
+		
+		public static InportService getInportService() {
+			try {
+				return (InportService) Class.forName(Constants.INPORT_SERVICE_CLASS).newInstance();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+			return null;
+		}
+		
+		public static OutportService getOutportService() {
+			try {
+				return (OutportService) Class.forName(Constants.OUTPORT_SERVICE_CLASS).newInstance();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
 			return null;
 		}
 }

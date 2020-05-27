@@ -25,7 +25,7 @@ public class SqlManager {
 	private String DBport = "";// 数据库端口
 	private String DBuser = "";// 数据库用户名
 	private String DBpassword = "";// 数据库密码
-	private String strcon = null;// 连接字符串
+	private String strcon;// 连接字符串
 
 	private Connection conn = null;// 连接对象
 	private PreparedStatement pstm = null;// 预处理接口
@@ -45,7 +45,7 @@ public class SqlManager {
 			String database_type =getString("database-type");//读取数据库类型
 			if(database_type !=null) {// 如果类型不为空
 				if(database_type.toLowerCase().equals("mysql")) {//设置mysql数据库的驱动程序和连接字符
-					jdbcDrive = "com.mysql.jdbc.Driver";
+					jdbcDrive = "com.mysql.cj.jdbc.Driver";
 					strcon ="jdbc:mysql://"+DBhost+":"+DBport+"/"+DBname;
 				}else if(database_type.toLowerCase().equals("oracle")) {//设置oracle数据库的驱动程序和连接字符
 					jdbcDrive = "oracle.jdbc.driver.OracleDriver";

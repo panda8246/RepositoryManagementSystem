@@ -19,6 +19,10 @@ public class GoodsDao implements BaseDao<Goods> {
 	}
 
 	@Override
+	/*
+	 *  ÃÌº”/≤Â»Î
+	 * @see com.oxhpjk.jxc.dao.BaseDao#save(java.lang.Object)
+	 */
 	public boolean save(Goods g) {
 		// ±‡–¥sql”Ôæ‰
 		String sql = "insert into t_goods values(?,?,?,?,?,?,?,?,?,?,?,1)";
