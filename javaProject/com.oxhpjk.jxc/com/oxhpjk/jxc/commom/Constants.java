@@ -14,4 +14,8 @@ public interface Constants {
     String  GOODS_SERVICE_CLASS ="com.oxhpjk.jxc.service.impl.GoodsServiceImpl";//供应商业务类
     String INPORT_SERVICE_CLASS = "com.oxhpjk.jxc.service.impl.InportServiceImp";//进货
     String OUTPORT_SERVICE_CLASS = "com.oxhpjk.jxc.service.impl.OutportServiceImp";//出货
+    String SALES_SERVICE_CLASS = "com.oxhpjk.jxc.service.impl.SalesServiceImp";
+    String SALESBACK_SERVICE_CLASS = "com.oxhpjk.jxc.service.impl.SalesbackServiceImp";
+    String STOCK_SERVICE_CLASS = "com.oxhpjk.jxc.service.impl.StockServiceImp";
+
 }

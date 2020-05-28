@@ -39,13 +39,14 @@ public class InportDao implements BaseDao<Inport>{
 		String sql = "select MAX(id) id from t_inport";
 		// 执行sql
 		ResultSet rs = sqlManager.executeQuery(sql, null, Constants.PSTM_TYPE);
-		String id = "GT1000001";
+		
+		String id = "in1";
 		try {
 			if (rs != null && rs.next()) {
 				String sid = rs.getString("id");// 获取前一次插入的id
 				if (sid != null) {
 					String str = sid.substring(2);// 截取编号中的数字
-					id = "GT" + (Integer.parseInt(str) + 1);
+					id = "in" + (Integer.parseInt(str) + 1);
 				}
 			}
 		} catch (SQLException e) {

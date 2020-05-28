@@ -58,13 +58,13 @@ public class CustomerDao implements BaseDao<Customer>{
 		String sql = "select MAX(id) id from t_customer";
 		// 执行sql
 		ResultSet rs = sqlManager.executeQuery(sql, null, Constants.PSTM_TYPE);
-		String id = "CT1001";
+		String id = "c1";
 		try {
 			if (rs != null && rs.next()) {
 				String sid = rs.getString("id");// 获取前一次插入的id
 				if (sid != null) {
-					String str = sid.substring(2);// 截取编号中的数字
-					id = "CT" + (Integer.parseInt(str) + 1);
+					String str = sid.substring(1);// 截取编号中的数字
+					id = "c" + (Integer.parseInt(str) + 1);
 				}
 			}
 		} catch (SQLException e) {

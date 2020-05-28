@@ -40,13 +40,13 @@ public class OutportDao implements BaseDao<Outport>{
 		String sql = "select MAX(id) id from t_outport";
 		// 执行sql
 		ResultSet rs = sqlManager.executeQuery(sql, null, Constants.PSTM_TYPE);
-		String id = "GT1000001";
+		String id = "out1";
 		try {
 			if (rs != null && rs.next()) {
 				String sid = rs.getString("id");// 获取前一次插入的id
 				if (sid != null) {
-					String str = sid.substring(2);// 截取编号中的数字
-					id = "GT" + (Integer.parseInt(str) + 1);
+					String str = sid.substring(3);// 截取编号中的数字
+					id = "out" + (Integer.parseInt(str) + 1);
 				}
 			}
 		} catch (SQLException e) {

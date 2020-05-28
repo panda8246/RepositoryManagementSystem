@@ -11,6 +11,9 @@ import com.oxhpjk.jxc.service.InportService;
 import com.oxhpjk.jxc.service.OperatorService;
 import com.oxhpjk.jxc.service.OutportService;
 import com.oxhpjk.jxc.service.ProviderService;
+import com.oxhpjk.jxc.service.SalesService;
+import com.oxhpjk.jxc.service.SalesbackService;
+import com.oxhpjk.jxc.service.StockService;
 
 public class CommonFactory {
 	/**
@@ -78,6 +81,36 @@ public class CommonFactory {
 		public static OutportService getOutportService() {
 			try {
 				return (OutportService) Class.forName(Constants.OUTPORT_SERVICE_CLASS).newInstance();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+			return null;
+		}
+		
+		public static SalesService getSalesService() {
+			try {
+				return (SalesService) Class.forName(Constants.SALES_SERVICE_CLASS).newInstance();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+			return null;
+		}
+		
+		public static SalesbackService getSalesbackService() {
+			try {
+				return (SalesbackService) Class.forName(Constants.SALESBACK_SERVICE_CLASS).newInstance();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+			return null;
+		}
+		
+		public static StockService getStockService() {
+			try {
+				return (StockService) Class.forName(Constants.STOCK_SERVICE_CLASS).newInstance();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

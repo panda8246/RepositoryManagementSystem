@@ -4,8 +4,9 @@ public class HelloWorld {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int a = 0;
-		System.out.println(a);
+		String id = "Ionsad1232";
+		String[] newid = id.split("[^0-9]");
+		System.out.println(newid.length);
 	}
 
 }

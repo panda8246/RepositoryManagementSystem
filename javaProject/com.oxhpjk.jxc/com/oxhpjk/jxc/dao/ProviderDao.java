@@ -51,13 +51,13 @@ public class ProviderDao implements BaseDao<Provider>{
 		String sql = "select MAX(id) id from t_provider";
 		// 执行sql
 		ResultSet rs = sqlManager.executeQuery(sql, null, Constants.PSTM_TYPE);
-		String id = "PD1001";
+		String id = "pro1";
 		try {
 			if (rs != null && rs.next()) {
 				String sid = rs.getString("id");// 获取前一次插入的id
 				if (sid != null) {
-					String str = sid.substring(2);// 截取编号中的数字
-					id = "PD" + (Integer.parseInt(str) + 1);
+					String str = sid.substring(3);// 截取编号中的数字
+					id = "pro" + (Integer.parseInt(str) + 1);
 				}
 			}
 		} catch (SQLException e) {

@@ -3,9 +3,6 @@ package com.oxhpjk.jxc.dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import com.oxhpjk.jxc.commom.*;
-
-
-import com.oxhpjk.jxc.commom.Constants;
 import com.oxhpjk.jxc.model.Operator;
 
 /**
@@ -15,6 +12,26 @@ import com.oxhpjk.jxc.model.Operator;
  */
 public class OperatorDao {
 	SqlManager manager=null;
+	
+	public String getId() {
+		// 获取最新的id
+		String sql = "select MAX(id) id from t_operator";
+		// 执行sql
+		ResultSet rs = manager.executeQuery(sql, null, Constants.PSTM_TYPE);
+		String id = "op1";
+		try {
+			if (rs != null && rs.next()) {
+				String sid = rs.getString("id");// 获取前一次插入的id
+				if (sid != null) {
+					String str = sid.substring(2);// 截取编号中的数字
+					id = "op" + (Integer.parseInt(str) + 1);
+				}
+			}
+		} catch (SQLException e) {
+			ErrorManager.printError("OutportDao getCustomerId()", e);
+		}
+		return id;
+	}
 	
 	public OperatorDao() {
 		super();
